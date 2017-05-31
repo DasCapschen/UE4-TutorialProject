@@ -1,0 +1,16 @@
+{
+	"FileVersion": 3,
+	"EngineAssociation": "{15D9ADB5-3704-0B14-002D-03D8215DFD31}",
+	"Category": "",
+	"Description": "",
+	"Modules": [
+		{
+			"Name": "Tutorial2017",
+			"Type": "Runtime",
+			"LoadingPhase": "Default",
+			"AdditionalDependencies": [
+				"Engine"
+			]
+		}
+	]
+}
