@@ -25,6 +25,6 @@ public:
 
 private:
 	AActor* FocusedActor;
-	float InteractionDistance = 200.f;
+	float InteractionDistance = 400.f;
 	FCollisionQueryParams TraceParams;
 };

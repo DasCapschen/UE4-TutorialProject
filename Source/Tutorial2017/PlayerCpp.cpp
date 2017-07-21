@@ -15,6 +15,8 @@ void APlayerCpp::BeginPlay()
 {
 	Super::BeginPlay();
 
+	FString string = FString( TEXT("Test: %i", 32) );
+
 }
 
 void APlayerCpp::Tick(float DeltaTime)
