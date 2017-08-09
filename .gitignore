@@ -84,3 +84,4 @@ DerivedDataCache/*
 # Restricted Content
 Content/Collections/*
 Content/Developers/*
+AssetSource/*
