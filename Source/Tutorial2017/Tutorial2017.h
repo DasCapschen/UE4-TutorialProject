@@ -2,5 +2,7 @@
 
 #pragma once
 
+#define WITH_NVVOLUMETRICLIGHTING 0
+
 #include "Engine.h"
 

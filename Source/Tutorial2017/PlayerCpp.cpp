@@ -14,15 +14,14 @@ APlayerCpp::APlayerCpp()
 void APlayerCpp::BeginPlay()
 {
 	Super::BeginPlay();
-
-	FString string = FString( TEXT("Test: %i", 32) );
-
 }
 
 void APlayerCpp::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
-	HandleHighlight();
+
+	if( IsLocallyControlled() )
+		HandleHighlight();
 }
 
 void APlayerCpp::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
@@ -34,12 +33,14 @@ void APlayerCpp::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent
 
 void APlayerCpp::SrvInteract_Implementation()
 {
-	if(FocusedActor)
+	AActor* interactable = FindActorInLOS();
+
+	if(interactable)
 	{
-		IInteractionInterfaceCpp* interface = Cast<IInteractionInterfaceCpp>(FocusedActor);
+		IInteractionInterfaceCpp* interface = Cast<IInteractionInterfaceCpp>(interactable);
 		if(interface)
 		{
-			interface->Execute_OnInteract(FocusedActor, this);
+			interface->Execute_OnInteract(interactable, this);
 		}
 	}
 }
@@ -50,6 +51,11 @@ bool APlayerCpp::SrvInteract_Validate()
 
 AActor* APlayerCpp::FindActorInLOS()
 {
+	if(!Controller)
+	{
+		return nullptr;
+	}
+
 	FVector Loc;
 	FRotator Rot;
 	FHitResult Hit (ForceInit);

@@ -6,6 +6,7 @@
 AInterActorCpp::AInterActorCpp()
 {
 	PrimaryActorTick.bCanEverTick = true;
+	bReplicates = true;
 }
 
 void AInterActorCpp::BeginPlay()
