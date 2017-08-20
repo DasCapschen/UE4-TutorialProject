@@ -5,6 +5,15 @@ using System.Collections.Generic;
 
 public class Tutorial2017EditorTarget : TargetRules
 {
+
+	public Tutorial2017EditorTarget(TargetInfo Target) : base(Target)
+	{
+		Type = TargetType.Editor;
+
+		ExtraModuleNames.AddRange( new string[] { "Tutorial2017" } );
+	}
+
+	/* 4.15 and older
 	public Tutorial2017EditorTarget(TargetInfo Target)
 	{
 		Type = TargetType.Editor;
@@ -22,4 +31,5 @@ public class Tutorial2017EditorTarget : TargetRules
 	{
 		OutExtraModuleNames.AddRange( new string[] { "Tutorial2017" } );
 	}
+	*/
 }

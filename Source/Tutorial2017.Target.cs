@@ -5,6 +5,15 @@ using System.Collections.Generic;
 
 public class Tutorial2017Target : TargetRules
 {
+
+	public Tutorial2017Target(TargetInfo Target) : base(Target)
+	{
+		Type = TargetType.Game;
+
+		ExtraModuleNames.AddRange( new string[] { "Tutorial2017" } );
+	}
+
+	/* 4.15 and older
 	public Tutorial2017Target(TargetInfo Target)
 	{
 		Type = TargetType.Game;
@@ -22,4 +31,5 @@ public class Tutorial2017Target : TargetRules
 	{
 		OutExtraModuleNames.AddRange( new string[] { "Tutorial2017" } );
 	}
+	*/
 }
